@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-from sqlalchemy import column, true
 
 class lds_positions:
     def __init__(self, k0, k1, m0, m1, padding_per_m1xk1, t_write_len, t_write_vec, t_read_vec) -> None:
@@ -62,7 +61,7 @@ class lds_positions:
         lds_bank_df.to_excel("lds_bank.xlsx")
         return lds_bank_df
 
-    def gen_ds_bank_dict(self, gen_write = true, gen_read = true):
+    def gen_ds_bank_dict(self, gen_write = True, gen_read = True):
         if gen_write:
             ds_write_bank = self.ds_write_bank
             ds_write_pos = self.ds_write_pos * 2
